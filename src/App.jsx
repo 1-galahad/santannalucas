@@ -54,9 +54,11 @@ function Arrow({ diagonal = false }) {
 function Header() {
   return (
     <header className="topbar">
-      <Link className="wordmark" to="/" aria-label="Lucas Santanna, início">
-        LS<span>®</span>
+      
+      <Link className="wordmark signature-logo" to="/" aria-label="Lucas Santanna, início">
+        <img src="/images/assinatura.png" alt="Lucas Santanna" />
       </Link>
+
 
       <span className="topbar-label">
         DESIGNER INDEPENDENTE · BRASIL

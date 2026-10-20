@@ -1737,3 +1737,23 @@ body,
     font-size: 8px;
   }
 }
+
+/* ASSINATURA PESSOAL NO CABEÇALHO */
+
+.wordmark.signature-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 76px;
+  height: 32px;
+  overflow: hidden;
+}
+
+.wordmark.signature-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
