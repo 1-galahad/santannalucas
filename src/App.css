@@ -1757,3 +1757,104 @@ body,
   object-fit: contain;
   object-position: left center;
 }
+
+/* ASSINATURA NO RODAPÉ */
+
+.footer-mark.signature-logo {
+  width: 76px;
+  height: 32px;
+}
+
+/* ASSINATURA — AMBIENTE EXTERNO DESKTOP */
+
+.ambient-left .ambient-signature {
+  display: block;
+  width: clamp(100px, 10vw, 150px);
+  max-height: 64px;
+  object-fit: contain;
+  object-position: left center;
+  margin-bottom: 12px;
+}
+
+/* A área externa existe apenas na experiência desktop */
+@media (max-width: 600px) {
+  .ambient-left .ambient-signature {
+    display: none;
+  }
+}
+
+/* MICROINTERAÇÃO — CRÉDITO DO HERO */
+
+.hero-credit-zone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  width: 170px;
+  height: 20px;
+  flex-shrink: 0;
+  overflow: hidden;
+  cursor: default;
+  transform: translate3d(var(--pull-x, 0px), var(--pull-y, 0px), 0);
+  transition: transform 180ms cubic-bezier(.2, .8, .2, 1);
+  user-select: none;
+}
+
+.hero-credit-symbol {
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.hero-credit-window {
+  display: block;
+  width: 132px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.hero-credit-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  transform: translateX(0);
+  transition: transform 480ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.hero-credit-original,
+.hero-credit-name {
+  display: block;
+  flex: 0 0 132px;
+  width: 132px;
+  white-space: nowrap;
+  font: inherit;
+}
+
+.hero-credit-name {
+  color: var(--ink);
+}
+
+.hero-credit-zone.is-revealed .hero-credit-track {
+  transform: translateX(-132px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-credit-zone,
+  .hero-credit-track {
+    transition: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-credit-zone {
+    transform: none;
+    cursor: default;
+  }
+
+  .hero-credit-track {
+    transform: none !important;
+  }
+
+  .hero-credit-window {
+    width: 132px;
+  }
+}

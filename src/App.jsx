@@ -1,5 +1,5 @@
 
-import { useEffect, useRef } from 'react'
+
 import {
   BrowserRouter,
   Link,
@@ -9,6 +9,7 @@ import {
   useLocation,
 } from 'react-router-dom'
 import './App.css'
+import { useEffect, useRef, useState } from 'react'
 
 const projects = [
   {
@@ -78,9 +79,15 @@ function Header() {
 function Footer() {
   return (
     <footer className="footer page-grid">
-      <Link className="wordmark footer-mark" to="/" aria-label="Voltar ao início">
-        LS<span>®</span>
+      
+      <Link
+        className="wordmark footer-mark signature-logo"
+        to="/"
+        aria-label="Voltar ao início"
+      >
+        <img src="/images/coroa.png" alt="Lucas Santanna" />
       </Link>
+
 
       <span>INDEPENDENTE POR NATUREZA.</span>
 
@@ -149,12 +156,76 @@ function ProjectGrid({ items = projects }) {
   )
 }
 
+function InteractiveCredit() {
+  const [revealed, setRevealed] = useState(false)
+  const [pull, setPull] = useState({ x: 0, y: 0 })
+  const timerRef = useRef(null)
+
+  useEffect(() => {
+    return () => clearTimeout(timerRef.current)
+  }, [])
+
+  function handlePointerMove(event) {
+    if (event.pointerType === 'touch') return
+
+    const rect = event.currentTarget.getBoundingClientRect()
+    const centerX = rect.left + rect.width / 2
+    const centerY = rect.top + rect.height / 2
+
+    const dx = event.clientX - centerX
+    const dy = event.clientY - centerY
+
+    setPull({
+      x: (dx / Math.max(rect.width / 2, 1)) * 4,
+      y: (dy / Math.max(rect.height / 2, 1)) * 3,
+    })
+
+    clearTimeout(timerRef.current)
+    timerRef.current = setTimeout(() => {
+      setRevealed(true)
+      setPull({ x: 0, y: 0 })
+    }, 450)
+  }
+
+  function handlePointerLeave() {
+    clearTimeout(timerRef.current)
+    setRevealed(false)
+    setPull({ x: 0, y: 0 })
+  }
+
+  return (
+    <span
+      className={`hero-credit-zone ${revealed ? 'is-revealed' : ''}`}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
+      style={{
+        '--pull-x': `${pull.x}px`,
+        '--pull-y': `${pull.y}px`,
+      }}
+      aria-label="Desenvolvido por Lucas Santanna"
+    >
+      <span className="hero-credit-symbol" aria-hidden="true">©</span>
+
+      <span className="hero-credit-window">
+        <span className="hero-credit-track">
+          <span className="hero-credit-original">
+            Desenvolvido por Lucas
+          </span>
+          <span className="hero-credit-name">
+            Lucas Santanna
+          </span>
+        </span>
+      </span>
+    </span>
+  )
+}
+
 function Hero() {
   return (
     <section className="hero page-grid" id="home">
       <div className="hero-meta">
         <span>PORTFÓLIO — 2026</span>
-        <span>DESIGN + TECNOLOGIA</span>
+        <InteractiveCredit />
       </div>
 
       <div className="hero-visual">
@@ -429,10 +500,17 @@ function PortfolioShell() {
 
   return (
     <div className="experience-shell">
-      <div className="ambient-label ambient-left" aria-hidden="true">
-        <span>LS®</span>
-        <span>DESIGNER INDEPENDENTE</span>
+
+      <div className="ambient-label ambient-left">
+        <img
+          className="ambient-signature"
+          src="/images/assinatura.png"
+          alt="Lucas Santanna"
+        />
+        <span>POR Lucas Santanna</span>
+        
       </div>
+
 
       <div className="device-frame">
         <div
