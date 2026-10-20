@@ -257,8 +257,7 @@ function Hero() {
 
       <div className="hero-bottom">
         <p className="hero-description">
-          Designer híbrido explorando a interseção entre direção de arte,
-          experiências digitais e tecnologia.
+          Designer brasileiro explorando os limites da criatividade. Vem conhecer meus projetos!
         </p>
 
         <Link className="round-link" to="/work" aria-label="Explorar projetos">
