@@ -222,23 +222,43 @@ function HomePage() {
         </Link>
       </section>
 
-      <section className="contact-section page-grid">
-        <span className="eyebrow">02 / TEM ALGUMA IDEIA?</span>
+      
+      <section className="home-contact page-grid">
+        <div className="home-contact-portrait">
+           <img src="/images/lucas-contato.jpg" alt="Lucas Santanna" />
+        </div>
 
-        <h2>
-          VAMOS CRIAR
-          <br />
-          <span className="outline-text">ALGO RELEVANTE.</span>
-        </h2>
+        <div className="home-contact-content">
+          
 
-        <Link className="contact-cta" to="/contato">
-          VAMOS CONVERSAR <Arrow diagonal />
-        </Link>
+          <h2>
+            Bora construir
+            <br />
+            <span className="outline-text">algo juntos?</span>
+          </h2>
 
-        <p className="contact-note">
-          Um bom projeto começa com uma boa conversa.
-        </p>
+
+          <div className="home-contact-links">
+            <a
+              className="home-contact-email"
+              href="mailto:lucas.santanna.f@gmail.com"
+            >
+              lucas.santanna.f@gmail.com <Arrow diagonal />
+            </a>
+
+            <a
+              className="home-contact-email home-contact-whatsapp"
+              href="https://wa.me/5516996203090"
+              target="_blank"
+              rel="noreferrer"
+            >
+              16 996203090 <Arrow diagonal />
+            </a>
+          </div>
+
+        </div>
       </section>
+
     </>
   )
 }

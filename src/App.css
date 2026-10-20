@@ -1596,3 +1596,144 @@ body,
     font-size: 8px;
   }
 }
+
+/* HOME — CONTATO COM ASSINATURA PESSOAL */
+
+.home-contact {
+  display: grid;
+  grid-template-columns: 0.72fr 1.6fr;
+  align-items: center;
+  gap: 22px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  border-top: 1px solid var(--line);
+}
+
+.home-contact-portrait {
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dedbd2;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.home-contact-content {
+  min-width: 0;
+}
+
+.home-contact-content .eyebrow {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.home-contact-content h2 {
+  margin: 0 0 30px;
+  font-size: clamp(30px, 7.4cqw, 58px);
+  line-height: 0.95;
+  font-weight: 600;
+  letter-spacing: -0.075em;
+}
+
+.home-contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--ink);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.025em;
+  overflow-wrap: anywhere;
+  transition: opacity 180ms ease;
+}
+
+.home-contact-email:hover {
+  opacity: 0.55;
+}
+
+.home-contact-email .arrow {
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .home-contact {
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 18px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .home-contact-portrait {
+    width: 82px;
+    max-width: none;
+  }
+
+  .home-contact-content .eyebrow {
+    margin-bottom: 20px;
+    font-size: 9px;
+  }
+
+  .home-contact-content h2 {
+    margin-bottom: 24px;
+    font-size: clamp(27px, 7.5vw, 40px);
+    line-height: 0.98;
+  }
+
+  .home-contact-email {
+    font-size: 8px;
+  }
+}
+
+@media (min-width: 601px) {
+  .site-content .home-contact {
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .site-content .home-contact-portrait {
+    width: 82px;
+    max-width: none;
+  }
+
+  .site-content .home-contact-content h2 {
+    font-size: clamp(28px, 7.4cqw, 42px);
+  }
+}
+.home-contact-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 50%;
+}
+
+.home-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 20px;
+}
+
+.home-contact-whatsapp {
+  border-bottom-style: dashed;
+}
+
+@media (max-width: 600px) {
+  .home-contact-links {
+    gap: 12px;
+  }
+
+  .home-contact-email {
+    font-size: 8px;
+  }
+}
