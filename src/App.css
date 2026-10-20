@@ -1185,3 +1185,242 @@ body,
     min-height: 100%;
   }
 }
+
+/* =========================================
+   HERO — LUCAS SANTANNA
+   Retrato + tipografia editorial sobreposta
+   ========================================= */
+
+.hero.page-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+
+.hero .hero-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 22px;
+  font-family: var(--mono);
+  font-size: 9px;
+  line-height: 1.5;
+  letter-spacing: 0.045em;
+}
+
+.hero-visual {
+  position: relative;
+  isolation: isolate;
+  container-type: inline-size;
+  width: calc(100% + 2 * var(--gutter));
+  margin-inline: calc(-1 * var(--gutter));
+  overflow: hidden;
+  background: #b9b9b5;
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: clamp(300px, 46vh, 440px);
+  object-fit: cover;
+  object-position: center 12%;
+  filter: saturate(0.82);
+}
+
+/* Nome gigante atravessando o retrato */
+.hero-visual .hero-name {
+  position: absolute;
+  z-index: 2;
+  top: 51%;
+  left: 50%;
+  width: max-content;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  color: #f2f0e9;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 9.1cqw, 5.8rem);
+  font-weight: 700;
+  line-height: 0.88;
+  letter-spacing: -0.085em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-shadow: 0 2px 18px rgb(0 0 0 / 12%);
+}
+
+.hero-photo-caption {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  z-index: 2;
+  color: #f2f0e9;
+  font-family: var(--mono);
+  font-size: 8px;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-align: right;
+  text-shadow: 0 1px 8px rgb(0 0 0 / 40%);
+}
+
+.hero .hero-bottom {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 22px 16px;
+  width: 100%;
+  padding-top: 24px;
+}
+
+.hero .hero-description {
+  max-width: 290px;
+  margin: 0;
+}
+
+.hero .round-link {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.hero .hero-index {
+  grid-column: 1 / -1;
+  margin-top: 2px;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 600px) {
+  .hero.page-grid {
+    padding-top: 18px;
+    padding-bottom: 38px;
+  }
+
+  .hero .hero-meta {
+    margin-bottom: 16px;
+    font-size: 8px;
+  }
+
+  .hero-photo {
+    height: clamp(290px, 48svh, 390px);
+    object-position: center 12%;
+  }
+
+  .hero-visual .hero-name {
+    top: 53%;
+    font-size: clamp(1.9rem, 9.1cqw, 3.4rem);
+    letter-spacing: -0.085em;
+  }
+
+  .hero-photo-caption {
+    right: 10px;
+    bottom: 10px;
+    font-size: 7px;
+  }
+
+  .hero .hero-bottom {
+    padding-top: 20px;
+    gap: 18px 12px;
+  }
+}
+
+/* Moldura desktop: mantém a experiência atual */
+@media (min-width: 601px) {
+  .hero-photo {
+    height: clamp(360px, 47vh, 470px);
+  }
+}
+
+/* Evita que nomes e textos causem overflow em telas estreitas */
+@media (max-width: 360px) {
+  .hero-visual .hero-name {
+    font-size: 8.8cqw;
+    letter-spacing: -0.09em;
+  }
+
+  .hero .hero-meta {
+    font-size: 7px;
+  }
+}
+
+/* Nome em movimento contínuo */
+.hero-visual .hero-marquee {
+  position: absolute;
+  z-index: 2;
+  top: 78%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+.hero-visual .hero-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: lucas-marquee 10s linear infinite;
+  will-change: transform;
+}
+
+.hero-visual .hero-marquee .hero-name {
+  position: static;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+  margin: 0;
+  padding: 0 0.18em 0 0;
+  transform: none;
+  color: #f2f0e9;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 9.1cqw, 5.8rem);
+  font-weight: 700;
+  line-height: 0.88;
+  letter-spacing: -0.085em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-shadow: 0 2px 18px rgb(0 0 0 / 12%);
+}
+
+@keyframes lucas-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-visual .hero-marquee {
+    top: 78%;
+  }
+
+  .hero-visual .hero-marquee .hero-name {
+    font-size: clamp(1.9rem, 9.1cqw, 3.4rem);
+    letter-spacing: -0.085em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-visual .hero-marquee-track {
+    animation: none;
+  }
+}
+
+/* Assinatura gráfica da faixa */
+.hero-visual .hero-name {
+  display: flex;
+  align-items: center;
+  gap: 0.22em;
+  padding-right: 0.18em;
+}
+
+.hero-visual .hero-star {
+  display: inline-block;
+  font-size: 0.72em;
+  line-height: 1;
+  letter-spacing: 0;
+}

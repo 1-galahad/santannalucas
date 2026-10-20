@@ -50,7 +50,9 @@ function Portfolio() {
           LS<span>®</span>
         </a>
 
-        <span className="topbar-label">INDEPENDENT DESIGNER · BRAZIL</span>
+        <span className="topbar-label">
+          INDEPENDENT DESIGNER · BRAZIL
+        </span>
 
         <nav className="navigation" aria-label="Navegação principal">
           <a href="#work">WORK</a>
@@ -67,11 +69,35 @@ function Portfolio() {
           <span>DESIGN MEETS TECHNOLOGY</span>
         </div>
 
-        <h1>
-          DESIGN
-          <br />
-          WITH <span className="outline-text">INTENT.</span>
-        </h1>
+        <div className="hero-visual">
+          <img
+            className="hero-photo"
+            src="/images/lucas.jpg"
+            alt="Retrato de Lucas Santanna"
+            fetchPriority="high"
+          />
+
+          <div className="hero-marquee" aria-label="Lucas Santanna">
+            <div className="hero-marquee-track">
+              <h1 className="hero-name">
+                <span className="hero-star" aria-hidden="true">★</span>
+                <span>LUCAS SANTANNA</span>
+                
+              </h1>
+
+              <h1 className="hero-name" aria-hidden="true">
+                <span className="hero-star">★</span>
+                <span>LUCAS SANTANNA</span>
+                
+              </h1>
+
+            </div>
+          </div>
+
+          <span className="hero-photo-caption">
+            DESIGNER · ART DIRECTOR · DIGITAL
+          </span>
+        </div>
 
         <div className="hero-bottom">
           <p className="hero-description">
@@ -111,7 +137,9 @@ function Portfolio() {
                   alt={project.alt}
                   loading="lazy"
                 />
-                <span className="project-number">{project.number} / 03</span>
+                <span className="project-number">
+                  {project.number} / 03
+                </span>
                 <span className="project-open" aria-hidden="true">
                   <Arrow diagonal />
                 </span>
@@ -120,7 +148,9 @@ function Portfolio() {
               <div className="project-info">
                 <div>
                   <h3>{project.title}</h3>
-                  <span className="project-category">{project.category}</span>
+                  <span className="project-category">
+                    {project.category}
+                  </span>
                 </div>
                 <span className="project-year">{project.year}</span>
               </div>
@@ -183,7 +213,10 @@ function Portfolio() {
           <span className="outline-text">IT MATTER.</span>
         </h2>
 
-        <a className="contact-cta" href="mailto:lucas.santanna.f@gmail.com">
+        <a
+          className="contact-cta"
+          href="mailto:lucas.santanna.f@gmail.com"
+        >
           START A CONVERSATION <Arrow diagonal />
         </a>
 
@@ -232,7 +265,10 @@ function App() {
       </div>
 
       <div className="device-frame">
-        <div className="device-screen" aria-label="Portfólio de Lucas Santanna">
+        <div
+          className="device-screen"
+          aria-label="Portfólio de Lucas Santanna"
+        >
           <div className="device-island" aria-hidden="true" />
           <Portfolio />
         </div>
