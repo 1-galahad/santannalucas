@@ -374,46 +374,54 @@ function WorkPage() {
   )
 }
 
+
 function AboutPage() {
   return (
-    <section className="about-section page-grid route-page">
+    <section className="about-section page-grid route-page about-editorial">
       <div className="about-label">
-        <span className="eyebrow">01 / QUEM SOU</span>
+        <span className="eyebrow">01 / SOBRE MIM</span>
         <span className="about-symbol" aria-hidden="true">✳</span>
       </div>
 
       <div className="about-content">
         <h1>
-          ENTRE
+          AJUDO MARCAS
           <br />
-          <span className="outline-text">LÓGICA</span> E INSTINTO.
+          A <span className="outline-text">PROSPERAREM</span>
+          <br />
+          NO DIGITAL.
         </h1>
 
         <div className="about-copy">
           <p>
-            Sou Lucas Santanna, designer brasileiro que trabalha entre
-            comunicação visual, experiências digitais e tecnologia criativa.
+            Sou Lucas Santanna, designer brasileiro que conecta direção de arte,
+            identidade visual e experiências digitais.
           </p>
 
-          <p>
-            Minha abordagem combina pensamento conceitual, sistemas visuais
-            e execução prática — do primeiro esboço à interface final.
-          </p>
-
-          <p>
-            Tenho interesse especial em projetos que conectam direção de arte,
-            design de interfaces e desenvolvimento front-end.
-          </p>
-        </div>
-
-        <div className="about-photo-grid" aria-label="Espaço reservado para fotografias">
-          <div className="about-photo-placeholder">
-            <span>FOTO 01</span>
-            <span>RETRATO</span>
+          <div className="about-editorial-photo about-photo-one">
+            <img
+              src="/images/sobre-lucas-01.jpg"
+              alt="Lucas Santanna"
+              loading="lazy"
+            />
+            
           </div>
-          <div className="about-photo-placeholder">
-            <span>FOTO 02</span>
-            <span>PROCESSO / ESTÚDIO</span>
+
+          <p className="about-second-paragraph">
+            Acredito em design que vai além da estética: marcas precisam
+            comunicar com clareza, criar conexões e transformar boas ideias
+            em experiências relevantes. Meu trabalho combina pensamento
+            conceitual, direção visual e execução prática, do primeiro
+            esboço à experiência final.
+          </p>
+
+          <div className="about-editorial-photo about-photo-two">
+            <img
+              src="/images/sobre-lucas-02.jpg"
+              alt="Lucas Santanna em seu processo criativo"
+              loading="lazy"
+            />
+            
           </div>
         </div>
 
@@ -428,6 +436,7 @@ function AboutPage() {
     </section>
   )
 }
+
 
 function ContactPage() {
   return (
