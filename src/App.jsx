@@ -11,38 +11,32 @@ import {
 import './App.css'
 import { useEffect, useRef, useState } from 'react'
 
+
 const projects = [
   {
-    number: '01',
-    title: 'Objects of Desire',
-    category: 'DIREÇÃO DE ARTE · CONCEITO',
-    year: '2026',
+    title: 'São Burger',
+    category: 'Direção de arte · Marketing 360°',
+    year: '2025',
+    image: '/images/projects/sao-burger/capa.png',
     type: 'wide',
-    image:
-      'https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1400&q=85',
-    alt: 'Composição minimalista de objetos e formas',
+    slug: 'sao-burger',
   },
   {
-    number: '02',
     title: 'Form & Function',
-    category: 'DESIGN DIGITAL · CONCEITO',
+    category: 'Design conceitual',
     year: '2026',
+    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85',
     type: 'portrait',
-    image:
-      'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1000&q=85',
-    alt: 'Interior contemporâneo com design minimalista',
   },
   {
-    number: '03',
     title: 'Chromatic Studies',
-    category: 'EXPERIMENTO VISUAL · CONCEITO',
+    category: 'Exploração visual',
     year: '2026',
+    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85',
     type: 'portrait',
-    image:
-      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85',
-    alt: 'Estudo visual de espaço, luz e composição',
   },
 ]
+
 
 function Arrow({ diagonal = false }) {
   return (
@@ -116,35 +110,47 @@ function Footer() {
   )
 }
 
-function ProjectCard({ project }) {
+
+function ProjectCard({ project, index, total }) {
+  const projectHref = project.slug
+    ? `/work/${project.slug}`
+    : '/work'
+
   return (
-    <article className={`project-card project-${project.type}`}>
+    <Link
+      to={projectHref}
+      className={`project-card ${project.type || ''}`}
+      aria-label={`Ver projeto ${project.title}`}
+    >
       <div className="project-image">
         <img
           src={project.image}
-          alt={project.alt}
+          alt={`Projeto ${project.title}`}
           loading="lazy"
         />
 
-        <span className="project-number">
-          {project.number} / {String(projects.length).padStart(2, '0')}
-        </span>
-
         <span className="project-open" aria-hidden="true">
-          <Arrow diagonal />
+          ↗
         </span>
       </div>
 
       <div className="project-info">
         <div>
+          <span className="project-number">
+            {String(index + 1).padStart(2, '0')} /{' '}
+            {String(total).padStart(2, '0')}
+          </span>
+
           <h3>{project.title}</h3>
-          <span className="project-category">{project.category}</span>
+          <p>{project.category}</p>
         </div>
+
         <span className="project-year">{project.year}</span>
       </div>
-    </article>
+    </Link>
   )
 }
+
 
 function ProjectGrid({ items = projects }) {
   return (
@@ -278,7 +284,7 @@ function HomePage() {
     <>
       <Hero />
 
-      <section className="work-section page-grid">
+      <section className="work-section page-grid home-projects">
         <div className="section-heading">
           <div>
             <span className="eyebrow">01 / TRABALHOS SELECIONADOS</span>
@@ -335,28 +341,37 @@ function HomePage() {
   )
 }
 
+
 function WorkPage() {
   return (
     <section className="work-section page-grid route-page">
       <div className="route-intro">
         <span className="eyebrow">01 / PORTFÓLIO</span>
+
         <h1 className="route-title">
-          Ideias em
+          Marcas reais.
           <br />
-          <span className="outline-text">construção.</span>
+          <span className="outline-text">
+            Ideias em movimento.
+          </span>
         </h1>
+
         <p className="route-description">
-          Direção de arte, identidade visual, design digital e experimentação.
-          Uma seleção de trabalhos e estudos visuais.
+          Identidade visual, direção de arte e comunicação integrada.
+          Projetos que conectam estratégia, expressão visual e presença
+          de marca — do digital ao mundo físico.
         </p>
       </div>
 
       <div className="section-heading">
         <div>
-          <span className="eyebrow">02 / GALERIA</span>
-          <h2>Projetos<span className="period">.</span></h2>
+          <span className="eyebrow">02 / PROJETOS SELECIONADOS</span>
+          <h2>Trabalhos<span className="period">.</span></h2>
         </div>
-        <span className="section-count">03 PROJETOS</span>
+
+        <span className="section-count">
+          PROJETOS — 2026
+        </span>
       </div>
 
       <ProjectGrid />
@@ -372,6 +387,7 @@ function WorkPage() {
     </section>
   )
 }
+
 
 
 function AboutPage() {
@@ -498,6 +514,135 @@ function NotFoundPage() {
   )
 }
 
+
+function SaoBurgerPage() {
+  return (
+    <section className="case-page page-grid route-page">
+      <div className="route-intro">
+        <span className="eyebrow">CASE 01 / DIREÇÃO DE ARTE</span>
+
+        <h1 className="route-title">
+          São Burger<span className="period">.</span>
+          <br />
+          <span className="outline-text">
+            Sabor com identidade.
+          </span>
+        </h1>
+
+        <p className="route-description">
+          Comunicação de marca para uma hamburgueria artesanal
+          que transforma bons ingredientes e um serviço de qualidade
+          em uma experiência própria.
+        </p>
+      </div>
+
+      <div className="case-cover">
+        <img
+          src="/images/projects/sao-burger/case1.png"
+          alt="Projeto São Burger"
+        />
+      </div>
+
+      <div className="case-meta">
+        <div>
+          <span className="eyebrow">CLIENTE</span>
+          <p>São Burger</p>
+        </div>
+
+        <div>
+          <span className="eyebrow">ESCOPO</span>
+          <p>Marketing 360° · Direção de arte</p>
+        </div>
+
+        <div>
+          <span className="eyebrow">ENTREGAS</span>
+          <p>Campanhas · Peças digitais e impressas</p>
+        </div>
+      </div>
+
+      <div className="case-story">
+        <span className="eyebrow">01 / O PROJETO</span>
+
+        <h2>Uma marca que eu já admirava.</h2>
+
+        <p>
+          O São Burger é um estabelecimento focado em hambúrgueres
+          artesanais gourmet, com um serviço que faz parte da experiência.
+          Eu já era fã do lugar antes de trabalhar com a marca — por isso,
+          assumir esse projeto foi uma honra.
+        </p>
+
+        <p>
+          A proposta foi levar a comunicação da marca por diferentes
+          frentes, criando peças visuais para campanhas e necessidades
+          variadas do negócio. Um trabalho de comunicação integrada,
+          pensado para manter a personalidade da marca presente em
+          diferentes formatos e pontos de contato.
+        </p>
+      </div>
+
+      <div className="case-gallery-heading">
+        <span className="eyebrow">02 / DIREÇÃO DE ARTE</span>
+        <h2>Da ideia à campanha<span className="period">.</span></h2>
+        <p>
+          As peças e aplicações deste projeto serão apresentadas aqui.
+        </p>
+      </div>
+
+
+      <div className="case-gallery">
+        <figure className="case-gallery-item">
+          <img
+            src="/images/projects/sao-burger/sextoupost.png"
+            alt="Campanha Sextou Burger"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>01 / CAMPANHA</span>
+            <p>Post Social Media - Sextou</p>
+          </figcaption>
+        </figure>
+
+
+        <figure className="case-gallery-item">
+          <video
+            src="/images/projects/sao-burger/crispy_1comlogo.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+            preload="metadata"
+          />
+          <figcaption>
+            <span>02 / CONTEÚDO AUDIOVISUAL</span>
+            <p>King Crispy </p>
+          </figcaption>
+        </figure>
+
+
+        <figure className="case-gallery-item">
+          <img
+            src="/images/projects/sao-burger/postcampanha.png"
+            alt="Peça gráfica de campanha do São Burger"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>03 / DIREÇÃO DE ARTE</span>
+            <p>Campanhas e peças gráficas</p>
+          </figcaption>
+        </figure>
+      </div>
+
+
+      <Link to="/work" className="text-link">
+        ← VOLTAR AOS PROJETOS
+      </Link>
+    </section>
+  )
+}
+
+
 function PortfolioShell() {
   const screenRef = useRef(null)
   const location = useLocation()
@@ -537,6 +682,9 @@ function PortfolioShell() {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contato" element={<ContactPage />} />
               <Route path="*" element={<NotFoundPage />} />
+              
+              <Route path="/work/sao-burger" element={<SaoBurgerPage />} />
+
             </Routes>
 
             <Footer />
