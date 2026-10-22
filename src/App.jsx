@@ -31,11 +31,12 @@ const projects = [
     slug: 'victuri-stucchi',
   },
   {
-    title: 'Chromatic Studies',
-    category: 'Exploração visual',
-    year: '2026',
-    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85',
-    type: 'portrait',
+    title: 'Bora-Bora',
+    category: 'Identidade visual · Direção de arte',
+    year: '—',
+    image: '/images/projects/bora-bora/capa.png',
+    type: 'wide',
+    slug: 'bora-bora',
   },
 ]
 
@@ -479,6 +480,16 @@ function ContactPage() {
       </a>
 
       <p className="contact-note">lucas.santanna.f@gmail.com</p>
+       <a
+          className="contact-cta contact-whatsapp-cta"
+          href="https://wa.me/5516996203090"
+          target="_blank"
+          rel="noreferrer"
+        >
+          ME MANDA UM ZAP <Arrow diagonal />
+        </a>
+
+        <p className="contact-note">+55 16 9 9620 3090</p>
 
       <div className="contact-socials">
         <a
@@ -868,6 +879,161 @@ function VicturiStucchiPage() {
   )
 }
 
+function BoraBoraPage() {
+  const base = '/images/projects/bora-bora/'
+
+  return (
+    <section className="case-page page-grid route-page case-bora-bora">
+      <div className="route-intro bora-intro">
+        <span className="eyebrow">CASE 03 / IDENTIDADE VISUAL</span>
+
+        <h1 className="route-title">
+          Bora-Bora<span className="period">.</span>
+          <br />
+          <span className="outline-text">A marca em todo lugar.</span>
+        </h1>
+
+        <p className="route-description">
+          Identidade visual e direção de arte aplicadas à fachada,
+          aos materiais de divulgação e às experiências digitais
+          de um bar que também se comunica pela sua personalidade.
+        </p>
+      </div>
+
+      <figure className="bora-cover">
+        <img
+          src={`${base}projetocapa.png`}
+          alt="Identidade visual do Bora-Bora"
+        />
+        <figcaption>IDENTIDADE VISUAL · DIREÇÃO DE ARTE</figcaption>
+      </figure>
+
+      <div className="case-meta bora-meta">
+        <div>
+          <span className="eyebrow">CLIENTE</span>
+          <p>Bora-Bora</p>
+        </div>
+        <div>
+          <span className="eyebrow">ESCOPO</span>
+          <p>Identidade visual · Direção de arte</p>
+        </div>
+        <div>
+          <span className="eyebrow">ENTREGAS</span>
+          <p>Logotipo · Fachada · Mídia kit · Filtro Instagram</p>
+        </div>
+      </div>
+
+      <section className="bora-chapter">
+        <div className="bora-chapter-heading">
+          <span className="eyebrow">01 / IDENTIDADE</span>
+          <h2>Uma marca com presença.</h2>
+          <p>
+            O logotipo estabelece a personalidade visual do Bora-Bora
+            e funciona como ponto de partida para suas aplicações.
+          </p>
+        </div>
+
+        <figure className="bora-art bora-art-logo">
+          <img
+            src={`${base}logo.png`}
+            alt="Logotipo do Bora-Bora"
+            loading="lazy"
+          />
+          <figcaption>01 — LOGOTIPO</figcaption>
+        </figure>
+      </section>
+
+      <section className="bora-chapter">
+        <div className="bora-chapter-heading">
+          <span className="eyebrow">02 / ESPAÇO FÍSICO</span>
+          <h2>A marca ganha a rua.</h2>
+          <p>
+            A fachada transforma a identidade em presença física,
+            conectando a linguagem visual ao espaço do estabelecimento.
+          </p>
+        </div>
+
+        <figure className="bora-art bora-art-facade">
+          <img
+            src={`${base}fachada.png`}
+            alt="Aplicação da identidade visual na fachada do Bora-Bora"
+            loading="lazy"
+          />
+          <figcaption>02 — APLICAÇÃO NA FACHADA</figcaption>
+        </figure>
+      </section>
+
+      <section className="bora-chapter">
+        <div className="bora-chapter-heading">
+          <span className="eyebrow">03 / COMUNICAÇÃO</span>
+          <h2>Uma linguagem para divulgar.</h2>
+          <p>
+            As peças do mídia kit e os materiais promocionais
+            estendem a identidade a diferentes momentos de contato
+            com o público.
+          </p>
+        </div>
+
+        <figure className="bora-art bora-art-campaign">
+          <img
+            src={`${base}midia-kit-01.png`}
+            alt="Conjunto de peças de comunicação do Bora-Bora"
+            loading="lazy"
+          />
+          <figcaption>03 — MÍDIA KIT</figcaption>
+        </figure>
+
+        <figure className="bora-art bora-art-promo">
+          <img
+            src={`${base}midia-kit-02.png`}
+            alt="Material promocional do Bora-Bora"
+            loading="lazy"
+          />
+          <figcaption>04 — MATERIAL PROMOCIONAL</figcaption>
+        </figure>
+      </section>
+
+      <section className="bora-chapter">
+        <div className="bora-chapter-heading">
+          <span className="eyebrow">04 / EXPERIÊNCIA DIGITAL</span>
+          <h2>A identidade entra na conversa.</h2>
+          <p>
+            O filtro personalizado para Instagram leva elementos
+            da marca para uma experiência interativa, aproximando
+            a identidade do público de uma forma participativa.
+          </p>
+        </div>
+
+        <div className="bora-filter-gallery">
+          <figure className="bora-art bora-art-filter-main">
+            <img
+              src={`${base}filtro-instagram-01.png`}
+              alt="Experiência do filtro Bora-Bora no Instagram"
+              loading="lazy"
+            />
+            <figcaption>05 — FILTRO PARA INSTAGRAM</figcaption>
+          </figure>
+
+          <figure className="bora-art bora-art-filter-secondary">
+            <img
+              src={`${base}filtro-instagram-02.png`}
+              alt="Segunda captura do filtro Bora-Bora"
+              loading="lazy"
+            />
+            <figcaption>06 — APLICAÇÃO DO FILTRO</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <Link to="/work" className="text-link bora-back-link">
+        ← VOLTAR AOS PROJETOS
+      </Link>
+    </section>
+  )
+}
+
+
+
 
 function PortfolioShell() {
   const screenRef = useRef(null)
@@ -914,6 +1080,11 @@ function PortfolioShell() {
               <Route
                 path="/work/victuri-stucchi"
                 element={<VicturiStucchiPage />}
+              />
+
+              <Route
+                path="/work/bora-bora"
+                element={<BoraBoraPage />}
               />
 
 

@@ -2334,3 +2334,183 @@ body,
   object-fit: cover;
   display: block;
 }
+
+/* ========================================
+   CASE 03 — BORA-BORA
+   ======================================== */
+
+.case-bora-bora {
+  --bora-space: 30px;
+  --bora-ink: #191916;
+  --bora-muted: #77766f;
+}
+
+/* Abertura */
+
+.case-bora-bora .bora-intro {
+  margin-bottom: 30px;
+}
+
+.case-bora-bora .bora-intro .route-description {
+  max-width: 34ch;
+}
+
+.case-bora-bora .bora-cover {
+  width: 100%;
+  margin: 0 0 34px;
+  padding: 0;
+}
+
+.case-bora-bora .bora-cover img {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.case-bora-bora .bora-cover figcaption,
+.case-bora-bora .bora-art figcaption {
+  margin-top: 10px;
+  color: var(--bora-muted);
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  line-height: 1.6;
+  letter-spacing: 0.045em;
+}
+
+/* Informações do projeto */
+
+.case-bora-bora .bora-meta {
+  margin-bottom: 52px;
+}
+
+/* Capítulos */
+
+.case-bora-bora .bora-chapter {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin: 0 0 58px;
+  min-width: 0;
+}
+
+.case-bora-bora .bora-chapter-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.case-bora-bora .bora-chapter-heading h2 {
+  margin: 0;
+  max-width: 19ch;
+}
+
+.case-bora-bora .bora-chapter-heading p {
+  margin: 0;
+  max-width: 38ch;
+  line-height: 1.75;
+}
+
+/* Todas as peças respeitam a proporção original */
+
+.case-bora-bora .bora-art {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.case-bora-bora .bora-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Logotipo: apresentação com respiro */
+
+.case-bora-bora .bora-art-logo {
+  padding: 16px;
+  background: #e9e6de;
+}
+
+.case-bora-bora .bora-art-logo img {
+  max-height: 280px;
+}
+
+/* Fachada */
+
+.case-bora-bora .bora-art-facade img {
+  width: 100%;
+}
+
+/* Mídia kit e material promocional */
+
+.case-bora-bora .bora-art-campaign img,
+.case-bora-bora .bora-art-promo img {
+  width: 100%;
+}
+
+/* Filtros: manter o formato vertical e dar ritmo */
+
+.case-bora-bora .bora-filter-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-width: 0;
+}
+
+.case-bora-bora .bora-art-filter-main,
+.case-bora-bora .bora-art-filter-secondary {
+  width: 100%;
+  max-width: 100%;
+}
+
+.case-bora-bora .bora-art-filter-main img,
+.case-bora-bora .bora-art-filter-secondary img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Encerramento */
+
+.case-bora-bora .bora-back-link {
+  display: inline-flex;
+  margin: 0 0 40px;
+}
+
+@media (min-width: 600px) {
+  .case-bora-bora {
+    --bora-space: 40px;
+  }
+
+  .case-bora-bora .bora-chapter {
+    gap: 28px;
+    margin-bottom: 76px;
+  }
+
+  .case-bora-bora .bora-filter-gallery {
+    gap: 36px;
+  }
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact-whatsapp-cta {
+  background: #191916;
+  color: #f2f0e9;
+}
+
+.contact-whatsapp-cta:hover {
+  opacity: 0.8;
+}
