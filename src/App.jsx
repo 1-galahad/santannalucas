@@ -21,12 +21,14 @@ const projects = [
     type: 'wide',
     slug: 'sao-burger',
   },
+
   {
-    title: 'Form & Function',
-    category: 'Design conceitual',
-    year: '2026',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85',
-    type: 'portrait',
+    title: 'Victuri Stucchi',
+    category: 'Marketing 360° · Comunicação integrada',
+    year: '—',
+    image: '/images/projects/victuri-stucchi/capacard.png',
+    type: 'wide',
+    slug: 'victuri-stucchi',
   },
   {
     title: 'Chromatic Studies',
@@ -642,6 +644,230 @@ function SaoBurgerPage() {
   )
 }
 
+const victuriCarousels = [
+  {
+    src: '/images/projects/victuri-stucchi/carousel-01.png',
+    alt: 'Carrossel de comunicação digital da Victuri Stucchi',
+  },
+  {
+    src: '/images/projects/victuri-stucchi/carousel-02.png',
+    alt: 'Outra sequência de peças da Victuri Stucchi',
+  },
+]
+
+function VicturiCarouselMarquee() {
+  return (
+    <div
+      className="victuri-marquee"
+      aria-label="Carrosséis de comunicação da Victuri Stucchi"
+    >
+      <div className="victuri-marquee-track">
+        {[0, 1].map((copy) => (
+          <div
+            className="victuri-marquee-group"
+            key={copy}
+            aria-hidden={copy === 1}
+          >
+            {victuriCarousels.map((item, index) => (
+              <img
+                key={`${copy}-${index}`}
+                src={item.src}
+                alt={copy === 0 ? item.alt : ''}
+                loading="lazy"
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+
+function VicturiStucchiPage() {
+  return (
+    <section className="case-page page-grid route-page">
+      <div className="route-intro">
+        <span className="eyebrow">
+          CASE 02 / MARKETING 360°
+        </span>
+
+        <h1 className="route-title">
+          Victuri Stucchi<span className="period">.</span>
+          <br />
+          <span className="outline-text">
+            Uma marca, várias presenças.
+          </span>
+        </h1>
+
+        <p className="route-description">
+          Comunicação integrada para aproximar uma imobiliária
+          tradicional do público no digital e ampliar sua presença
+          para além das telas.
+        </p>
+      </div>
+
+      <div className="case-cover">
+        <img
+          src="/images/projects/victuri-stucchi/capa.png"
+          alt="Projeto Victuri Stucchi"
+          loading="lazy"
+        />
+      </div>
+
+
+      <div className="case-meta">
+        <div>
+          <span className="eyebrow">CLIENTE</span>
+          <p>Victuri Stucchi</p>
+        </div>
+
+        <div>
+          <span className="eyebrow">ESCOPO</span>
+          <p>Marketing 360°</p>
+        </div>
+
+        <div>
+          <span className="eyebrow">FRENTES</span>
+          <p>Digital e comunicação offline</p>
+        </div>
+      </div>
+
+      <div className="case-story">
+        <span className="eyebrow">01 / CONTEXTO</span>
+
+        <h2>Uma marca com raízes locais.</h2>
+
+        <p>
+          A Victuri Stucchi é uma imobiliária familiar, fortemente
+          ligada a Araraquara. O projeto partiu da oportunidade de
+          desenvolver um relacionamento mais próximo entre a marca
+          e seu público por meio dos canais digitais.
+        </p>
+
+        <p>
+          Mais do que produzir peças para redes sociais, o trabalho
+          buscou construir uma presença digital para a imobiliária,
+          levando sua comunicação para um canal de contato contínuo
+          com as pessoas.
+        </p>
+
+        <span className="eyebrow">02 / COMUNICAÇÃO INTEGRADA</span>
+
+                
+        <h2>Do digital para as ruas.</h2>
+
+        <p>
+          A comunicação também ultrapassou o ambiente online.
+          Desenvolvemos materiais offline, incluindo aplicações
+          visuais na frota automotiva, ampliando os pontos de contato
+          da marca com a cidade.
+        </p>
+
+        <div className="case-fleet-gallery">
+          <figure>
+            <img
+              src="/images/projects/victuri-stucchi/frota-01.png"
+              alt="Aplicação da identidade visual da Victuri Stucchi na frota"
+              loading="lazy"
+            />
+            <figcaption>01 / IDENTIDADE VISUAL EM MOVIMENTO</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="/images/projects/victuri-stucchi/frota-02.png"
+              alt="Detalhe da comunicação visual de um veículo da Victuri Stucchi"
+              loading="lazy"
+            />
+            <figcaption>02 / PRESENÇA NAS RUAS</figcaption>
+          </figure>
+        </div>
+
+        <p>
+          A proposta foi trabalhar diferentes formatos de comunicação
+          dentro de uma mesma visão de marca: presença, proximidade
+          e reconhecimento local.
+        </p>
+
+      </div>
+
+      
+      <div className="case-gallery-heading">
+        <span className="eyebrow">03 / CONTEÚDO DIGITAL</span>
+        <h2>Uma marca em movimento<span className="period">.</span></h2>
+        <p>
+          Conteúdo, campanhas e narrativas visuais para fortalecer
+          a presença digital da imobiliária.
+        </p>
+      </div>
+
+      <div className="case-gallery">
+        <figure className="case-gallery-item">
+          <img
+            src="/images/projects/victuri-stucchi/conteudo-01.png"
+            alt="Peça de conteúdo da Victuri Stucchi"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>01 / CONTEÚDO</span>
+            <p>Conteúdo para redes sociais</p>
+          </figcaption>
+        </figure>
+
+        <figure className="case-gallery-item">
+          <img
+            src="/images/projects/victuri-stucchi/imovel-01.png"
+            alt="Divulgação de imóvel da Victuri Stucchi"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>02 / IMÓVEIS</span>
+            <p>Divulgação de propriedades</p>
+          </figcaption>
+        </figure>
+
+        <figure className="case-gallery-item">
+          <img
+            src="/images/projects/victuri-stucchi/dia-das-maes.png"
+            alt="Arte comemorativa de Dia das Mães"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>03 / CAMPANHA SAZONAL</span>
+            <p>Dia das Mães</p>
+          </figcaption>
+        </figure>
+
+        <figure className="case-gallery-item">
+          <img
+            src="/images/projects/victuri-stucchi/quarta-feira.png"
+            alt="Peça da tradição de quarta-feira da imobiliária"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>04 / IDENTIDADE LOCAL</span>
+            <p>Postagem Institucional</p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div className="case-gallery-heading">
+        <span className="eyebrow">04 / CAMPANHAS EM SEQUÊNCIA</span>
+        <h2>Uma história, quadro a quadro<span className="period">.</span></h2>
+      </div>
+
+      <VicturiCarouselMarquee />
+
+      
+
+      <Link to="/work" className="text-link">
+        ← VOLTAR AOS PROJETOS
+      </Link>
+    </section>
+  )
+}
+
 
 function PortfolioShell() {
   const screenRef = useRef(null)
@@ -684,6 +910,12 @@ function PortfolioShell() {
               <Route path="*" element={<NotFoundPage />} />
               
               <Route path="/work/sao-burger" element={<SaoBurgerPage />} />
+              
+              <Route
+                path="/work/victuri-stucchi"
+                element={<VicturiStucchiPage />}
+              />
+
 
             </Routes>
 
